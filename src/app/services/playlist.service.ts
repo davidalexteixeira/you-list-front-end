@@ -7,9 +7,10 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PlaylistService {
+
   playlist = Array<any>();
 
-  API_URL = 'http://localhost:3000/'
+  API_URL = 'http://localhost:3000'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,9 +18,11 @@ export class PlaylistService {
 
     return this.httpClient.get(`${this.API_URL}/playlist`)
       .toPromise()
-      .then((res: Response) => res.json())
-
   }
 
+  getPlayList(id): Promise<any>  {
+    return this.httpClient.get(`${this.API_URL}/playlist/${id}`)
+    .toPromise()
+   }
   
 }

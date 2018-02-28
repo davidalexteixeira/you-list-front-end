@@ -29,7 +29,7 @@ export class AuthLoginPageComponent implements OnInit {
         password: this.password
       })
         .then((data) => {
-        this.router.navigate(['/'])
+        this.router.navigate(['/playlist'])
       //     // ... maybe turn this to false if your're staying on the page - this.processing = false;
        })
         .catch((err) => {

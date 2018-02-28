@@ -63,6 +63,15 @@ html {
     margin-bottom: 20px;
     padding-top: 20px;
   }
+
+  .playlist-container {
+    
+  }
+  .playlist-list {
+    list-style: none;
+  }
+
+
   
   @media (min-width: 768px) {
     .container {

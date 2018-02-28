@@ -4,10 +4,14 @@
   loading...
 </div>
 
-<ul *ngIf="playlists">
+<div class='playlist-container'>
+  <ul class='playlist-list' *ngIf="playlists">
 
-  <li *ngFor="let playlist of playlists">
-   {{playlist.name}}
-  </li>
+    <li *ngFor="let playlist of playlists">
+      <div>
+        <a [routerLink]='["playlist", playlist._id]'>{{playlist.playlistname}}</a>
+    </div>
+    </li>
 
-</ul>
+  </ul>
+</div>
