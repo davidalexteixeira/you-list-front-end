@@ -9,7 +9,7 @@
 
     <li *ngFor="let playlist of playlists">
       <div>
-        <a [routerLink]='["playlist", playlist._id]'>{{playlist.playlistname}}</a>
+        <a [routerLink]='["single-playlist", playlist._id]'>{{playlist.playlistname}}</a>
     </div>
     </li>
 

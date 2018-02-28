@@ -21,7 +21,7 @@ export class PlaylistService {
   }
 
   getPlayList(id): Promise<any>  {
-    return this.httpClient.get(`${this.API_URL}/playlist/${id}`)
+    return this.httpClient.get(`${this.API_URL}/playlist/single-playlist/${id}`)
     .toPromise()
    }
   

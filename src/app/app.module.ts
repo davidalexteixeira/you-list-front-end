@@ -14,14 +14,16 @@ import {AuthService} from './services/auth.service'
 import { InitGuardService } from './guards/init-guard.service';
 import { RequireAnonService } from './guards/require-anon.service';
 import { RequireUserService } from './guards/require-user.service';
-import { PlaylistService } from './services/playlist.service'
+import { PlaylistService } from './services/playlist.service';
+import { SinglePlaylistComponent } from './components/single-playlist/single-playlist.component'
 
 // -- routes
 const routes: Routes = [
-  { path: '',  component: HomePageComponent, canActivate: [ RequireAnonService ] },
+  { path: '',  component: HomePageComponent, canActivate: [ InitGuardService ]},
   { path: 'auth/login',  component: AuthLoginPageComponent, canActivate: [ RequireAnonService ] },
   { path: 'auth/signup',  component: AuthSignupPageComponent, canActivate: [ RequireAnonService ] },
   { path: 'playlist', component: PlaylistComponent, canActivate: [ RequireUserService] },
+  { path: 'playlist/single-playlist/:id', component: SinglePlaylistComponent, canActivate: [ RequireUserService] },
   { path: '**', redirectTo: '' }
 ];
 
@@ -31,7 +33,8 @@ const routes: Routes = [
     HomePageComponent,
     AuthLoginPageComponent,
     AuthSignupPageComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    SinglePlaylistComponent
   ],
   imports: [
     BrowserModule,
