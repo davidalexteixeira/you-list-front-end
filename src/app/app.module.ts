@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [ InitGuardService ] },
   { path: 'auth/login',  component: AuthLoginPageComponent, canActivate: [ RequireAnonService ] },
   { path: 'auth/signup',  component: AuthSignupPageComponent, canActivate: [ RequireAnonService ] },
-  { path: '/playlist', component: PlaylistComponent, canActivate: [ RequireUserService] },
+  { path: 'playlist', component: PlaylistComponent, canActivate: [ RequireUserService] },
   { path: '**', redirectTo: '' }
 ];
 
