@@ -35,20 +35,29 @@ html {
     margin: 0;
   }
   
-  
+  button {
+    background-color: #1245ff;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 11px;
+  }
   
   /* ---- layout ---- */
   
   #site-header {
     padding: 30px 0;
     color: white;
-    background: #111;
+    background: #1245ff;;
   }
   
   #site-footer {
     color: white;
     padding: 60px 0;
-    background: #111;
+    background: #1245ff;;
   }
   
   #site-main {
@@ -65,12 +74,28 @@ html {
   }
 
   .playlist-container {
-    
+    overflow-y: scroll;
+    max-height: 150px;
   }
   .playlist-list {
     list-style: none;
+    margin-bottom: 10px;
   }
 
+  a:link, a:visited {
+    background-color: #1245ff;
+    color: white;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 11px;
+}
+
+a:hover, a:active {
+    background-color:#2027ff;
+}
 
   
   @media (min-width: 768px) {
@@ -105,13 +130,7 @@ form .submit {
   padding-top: 20px;
 }
 
-form .submit button {
-  padding: 5px 20px;
-  text-align: center;
-  font-size: 16px;
-  background-color: cyan;
-  cursor: pointer;
-}
+
 
 form .field.has-error label {
 	color: red;

@@ -1,7 +1,6 @@
 <ul>
-  <li *ngFor="let playlist of playlists">
-      {{playlist.playlistname}}
-      <app-playlist-card [playlist]="playlist" ></app-playlist-card>
+  <li class='playlist-list' *ngFor="let playlist of playlists">
+      <app-playlist-card [playlist]="playlist" >{{playlist.playlistname}}</app-playlist-card>
   </li>
 </ul>
 

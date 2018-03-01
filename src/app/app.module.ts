@@ -15,10 +15,12 @@ import { InitGuardService } from './guards/init-guard.service';
 import { RequireAnonService } from './guards/require-anon.service';
 import { RequireUserService } from './guards/require-user.service';
 import { PlaylistService } from './services/playlist.service';
+import { UserService } from './services/user.service'
 import { SinglePlaylistComponent } from './pages/single-playlist/single-playlist.component';
 import { CreatePlaylistComponent } from './pages/create-playlist/create-playlist.component';
 import { PlaylistListComponent } from './components/playlist-list/playlist-list.component';
 import { PlaylistCardComponent } from './components/playlist-card/playlist-card.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 
 // -- routes
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: '',  component: HomePageComponent, canActivate: [ InitGuardService ]},
   { path: 'auth/login',  component: AuthLoginPageComponent, canActivate: [ RequireAnonService ] },
   { path: 'auth/signup',  component: AuthSignupPageComponent, canActivate: [ RequireAnonService ] },
+  { path: 'user-profile/:id',  component: UserProfileComponent, canActivate: [ RequireUserService ] },
   { path: 'playlist', component: PlaylistComponent, canActivate: [ RequireUserService] },
   { path: 'playlist/single-playlist/:id', component: SinglePlaylistComponent, canActivate: [ RequireUserService] },
   { path: 'playlist/create-playlist', component: CreatePlaylistComponent, canActivate: [ RequireUserService] },
@@ -42,7 +45,8 @@ const routes: Routes = [
     SinglePlaylistComponent,
     CreatePlaylistComponent,
     PlaylistListComponent,
-    PlaylistCardComponent
+    PlaylistCardComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,8 @@ const routes: Routes = [
      InitGuardService,
      RequireAnonService,
      RequireUserService,
-     PlaylistService
+     PlaylistService,
+     UserService
     ],
   bootstrap: [AppComponent]
 })

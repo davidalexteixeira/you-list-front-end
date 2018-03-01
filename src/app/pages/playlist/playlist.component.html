@@ -8,10 +8,10 @@
   <ul class='playlist-list' *ngIf="playlists">
     <app-playlist-list [playlists]="playlists" ></app-playlist-list>
     <div>
-      <a [routerLink]='["create-playlist"]'>Create a playlist</a>
     </div>
-   </ul>
-  </div>
+  </ul>
+</div>
+<a [routerLink]='["create-playlist"]'>Create a playlist</a>
   
   <!-- 
       <li *ngFor="let playlist of playlists">
