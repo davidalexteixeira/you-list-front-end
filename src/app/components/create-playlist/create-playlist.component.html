@@ -1,0 +1,24 @@
+<p>
+  create-playlist works!
+</p>
+
+<a [routerLink]='["/playlist"]'>Back to playlists</a>
+
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && playlistnameField.errors}">
+    <label>Playlist name</label>
+    <input type="text" name="playlistname" [(ngModel)]="playlistname" #playlistnameField="ngModel" required minlength="6" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && playlistnameField.errors">
+      <p *ngIf="playlistnameField.errors.required" class="validation">playlistname required</p>
+      <p *ngIf="playlistnameField.errors.minlength" class="validation">playlistname is too short</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit" [disabled]="processing">Create</button>
+    <div *ngIf="feedbackEnabled && form.invalid">
+      <p class="validation">there are errors in the form, please review the fields</p>
+    </div>
+  </div>
+</form>

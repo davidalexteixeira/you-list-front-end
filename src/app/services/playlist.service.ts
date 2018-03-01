@@ -25,4 +25,10 @@ export class PlaylistService {
     .toPromise()
    }
   
+   createPlaylist(playlist: any): Promise<any> {
+        return this.httpClient.post(`${this.API_URL}/playlist/create-playlist`, playlist)
+      .toPromise()
+  }
+
+
 }

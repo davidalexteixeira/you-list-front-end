@@ -10,12 +10,13 @@ import { AuthLoginPageComponent } from './components/auth-login-page/auth-login-
 import { AuthSignupPageComponent } from './components/auth-signup-page/auth-signup-page.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 
-import {AuthService} from './services/auth.service'
+import { AuthService } from './services/auth.service'
 import { InitGuardService } from './guards/init-guard.service';
 import { RequireAnonService } from './guards/require-anon.service';
 import { RequireUserService } from './guards/require-user.service';
 import { PlaylistService } from './services/playlist.service';
-import { SinglePlaylistComponent } from './components/single-playlist/single-playlist.component'
+import { SinglePlaylistComponent } from './components/single-playlist/single-playlist.component';
+import { CreatePlaylistComponent } from './components/create-playlist/create-playlist.component'
 
 // -- routes
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'auth/signup',  component: AuthSignupPageComponent, canActivate: [ RequireAnonService ] },
   { path: 'playlist', component: PlaylistComponent, canActivate: [ RequireUserService] },
   { path: 'playlist/single-playlist/:id', component: SinglePlaylistComponent, canActivate: [ RequireUserService] },
+  { path: 'playlist/create-playlist', component: CreatePlaylistComponent, canActivate: [ RequireUserService] },
   { path: '**', redirectTo: '' }
 ];
 
@@ -34,7 +36,8 @@ const routes: Routes = [
     AuthLoginPageComponent,
     AuthSignupPageComponent,
     PlaylistComponent,
-    SinglePlaylistComponent
+    SinglePlaylistComponent,
+    CreatePlaylistComponent
   ],
   imports: [
     BrowserModule,
