@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let playlist of playlists">
+      {{playlist.playlistname}}
+      <app-playlist-card [playlist]="playlist" ></app-playlist-card>
+  </li>
+</ul>
+
+<!-- (delete)="handleDelete($event) -->

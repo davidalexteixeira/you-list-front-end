@@ -13,7 +13,7 @@ export class CreatePlaylistComponent implements OnInit {
   error = null;
   processing = false;
   playlistname: String;
-
+  
   constructor(private playlistService: PlaylistService, private router: Router) { }
 
   ngOnInit() {
@@ -26,7 +26,6 @@ export class CreatePlaylistComponent implements OnInit {
       this.processing = true;
       this.playlistService.createPlaylist({
         playlistname: this.playlistname,
-        
       })
         .then((data) => {
         this.router.navigate(['/playlist'])
