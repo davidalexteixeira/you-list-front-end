@@ -9,7 +9,7 @@ import { PlaylistService } from '../../services/playlist.service';
 })
 export class SinglePlaylistComponent implements OnInit {
 
-  playlists: Object;
+  playlists: any;
   playlistId: any;
 
   constructor(private activatedRoute: ActivatedRoute, private playlistService: PlaylistService ) { 

@@ -11,9 +11,14 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUser(id): Promise<any>  {
-    return this.httpClient.get(`${this.API_URL}/user-profile/${id}`)
+  getUser(id: any): Promise<any>  {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/user-profile/${id}`, options)
     .toPromise()
    }
+
+
 
 }

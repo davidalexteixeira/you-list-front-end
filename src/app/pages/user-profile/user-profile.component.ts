@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../services/auth.service'
+import { PlaylistService } from '../../services/playlist.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,18 +11,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
   user: any;
-  userId: any;
+  playlist: any;
+  
+  constructor(private authService: AuthService, private playlistService: PlaylistService) { }
+  
 
   ngOnInit() {
-    this.activatedRoute.params
-    .subscribe((params) => {
-      this.userId = String(params.id)
-      console.log(this.userId);
-      this.userService.getUser(this.userId)
-      .then((res: any) => {this.user = res})
-  })
+    this.user = this.authService.getUser();
   }
 
 }
