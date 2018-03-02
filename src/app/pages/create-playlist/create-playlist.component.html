@@ -1,8 +1,9 @@
 <p>
   create-playlist works!
 </p>
-
+<div class='nav-playlists'>
 <a [routerLink]='["/playlist"]'>Back to playlists</a>
+</div>
 
 <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 

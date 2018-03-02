@@ -11,11 +11,12 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUser(id: any): Promise<any>  {
+
+   getPlayList():  Promise<any>  {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.API_URL}/user-profile/${id}`, options)
+    return this.httpClient.get(`${this.API_URL}/user/playlists`, options)
     .toPromise()
    }
 

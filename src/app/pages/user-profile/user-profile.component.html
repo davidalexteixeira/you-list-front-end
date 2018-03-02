@@ -1,4 +1,6 @@
+<div class='nav-playlists'>
 <a [routerLink]='["/playlist"]'>Back to playlists</a>
+</div>
 
 <p>
   user-profile works!
@@ -7,8 +9,17 @@
 <div>
     <h1>
       {{user.username}}
-      <!-- {{playlist.playlistname}} -->
     </h1>
+    <div class='playlist-container'>
+        <ul>
+          <li class='playlist-list' *ngFor="let playlist of playlists">
+            <a [routerLink]='["../../playlist/single-playlist", playlist._id]'>
+              {{playlist.playlistname}}
+              By: {{playlist.owner.username}}
+            </a>
+          </li>
+        </ul>
+      </div>
 </div>
 
 <a [routerLink]='["../../playlist/create-playlist"]'>Create a playlist</a>

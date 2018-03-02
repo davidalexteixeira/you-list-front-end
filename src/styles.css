@@ -77,6 +77,36 @@ html {
     overflow-y: scroll;
     max-height: 150px;
   }
+
+  .playlist-container{
+    scrollbar-face-color: #367CD2;
+    scrollbar-shadow-color: rgb(14, 0, 0);
+    scrollbar-highlight-color: rgb(5, 0, 0);
+    scrollbar-3dlight-color: rgb(5, 0, 0);
+    scrollbar-darkshadow-color: rgb(2, 0, 0);
+    scrollbar-track-color: rgb(7, 0, 0);
+    scrollbar-arrow-color: rgb(7, 0, 0);
+}
+
+/* Let's get this party started */
+.playlist-container::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+.playlist-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+.playlist-container::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #367CD2; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
   .playlist-list {
     list-style: none;
     margin-bottom: 10px;
@@ -95,6 +125,10 @@ html {
 
 a:hover, a:active {
     background-color:#2027ff;
+}
+
+.nav-playlists {
+  margin-top: 10px;
 }
 
   

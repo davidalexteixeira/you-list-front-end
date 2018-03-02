@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../services/auth.service'
@@ -12,13 +12,23 @@ import { PlaylistService } from '../../services/playlist.service';
 export class UserProfileComponent implements OnInit {
 
   user: any;
-  playlist: any;
+  playlists: any;
+  userId: any;
   
-  constructor(private authService: AuthService, private playlistService: PlaylistService) { }
+  constructor(private authService: AuthService, 
+    private userService: UserService,
+    private activatedRoute: ActivatedRoute) { }
   
 
   ngOnInit() {
     this.user = this.authService.getUser();
+
+    this.activatedRoute.params
+    .subscribe((params) => {
+      this.userId = String(params.id)
+    });
+    this.userService.getPlayList()
+    .then((data) => this.playlists = data)
   }
 
 }

@@ -24,6 +24,14 @@ export class PlaylistService {
     return this.httpClient.get(`${this.API_URL}/playlist/single-playlist/${id}`)
     .toPromise()
    }
+
+   getAllByUser(userId : any): Promise<any>{
+    const options = {
+      withCredentials: true
+    };
+        return this.httpClient.get(`${this.API_URL}/user-profile/playlists/${userId}`, options)
+      .toPromise()
+   }
   
    createPlaylist(playlist: any): Promise<any> {
     const options = {
