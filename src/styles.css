@@ -19,10 +19,11 @@ html {
   /* ---- typography ---- */
   
   body {
-    color: #111;
+    color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     line-height: 147%;
+    background-color: black;
   }
   
   h1 {}
@@ -38,11 +39,11 @@ html {
   button {
     background-color: #1245ff;
     color: white;
-    padding: 14px 25px;
+    padding: 4px 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 11px;
   }
   
@@ -51,13 +52,13 @@ html {
   #site-header {
     padding: 30px 0;
     color: white;
-    background: #1245ff;;
+    background: black;
   }
   
   #site-footer {
     color: white;
     padding: 60px 0;
-    background: #1245ff;;
+    background: black;
   }
   
   #site-main {
@@ -75,7 +76,8 @@ html {
 
   .playlist-container {
     overflow-y: scroll;
-    max-height: 150px;
+    max-height: 160px;
+    margin-bottom: 10px;
   }
 
   .playlist-container{
@@ -115,11 +117,11 @@ html {
   a:link, a:visited {
     background-color: #1245ff;
     color: white;
-    padding: 14px 25px;
+    padding: 0px 40px;
     text-align: center; 
     text-decoration: none;
     display: inline-block;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 11px;
 }
 
