@@ -2,20 +2,15 @@
 <a [routerLink]='["/playlist"]'>Back to playlists</a>
 </div>
 
-<p>
-  user-profile works!
-</p>
-
 <div>
-    <h1>
+    <h2>
       {{user.username}}
-    </h1>
+    </h2>
     <div class='playlist-container'>
         <ul>
           <li class='playlist-list' *ngFor="let playlist of playlists">
             <a [routerLink]='["../../playlist/single-playlist", playlist._id]'>
               {{playlist.playlistname}}
-              By: {{playlist.owner.username}}
             </a>
           </li>
         </ul>
