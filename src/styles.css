@@ -81,8 +81,8 @@ html {
   }
 
   .playlist-container{
-    scrollbar-face-color: #367CD2;
-    scrollbar-shadow-color: rgb(14, 0, 0);
+    scrollbar-face-color: rgb(250, 3, 229);
+    scrollbar-shadow-color: rgb(255, 1, 242);
     scrollbar-highlight-color: rgb(5, 0, 0);
     scrollbar-3dlight-color: rgb(5, 0, 0);
     scrollbar-darkshadow-color: rgb(2, 0, 0);
@@ -106,7 +106,7 @@ html {
 .playlist-container::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: #367CD2; 
+    background: rgb(255, 0, 200); 
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
   .playlist-list {
