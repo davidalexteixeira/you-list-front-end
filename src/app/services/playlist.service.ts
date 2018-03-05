@@ -3,6 +3,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/toPromise';
+import { environment } from '../../environments/environment';
 
 
 @Injectable()
@@ -10,7 +11,7 @@ export class PlaylistService {
 
 
 
-  API_URL = 'http://localhost:3000'
+  API_URL = environment.apiUrl
 
   constructor(private httpClient: HttpClient) { }
 
