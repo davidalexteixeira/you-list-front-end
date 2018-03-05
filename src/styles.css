@@ -76,7 +76,7 @@ html {
 
   .playlist-container {
     overflow-y: scroll;
-    max-height: 160px;
+    max-height: 120px;
     margin-bottom: 10px;
   }
 
@@ -114,6 +114,9 @@ html {
     margin-bottom: 10px;
   }
 
+  a {
+    margin-bottom: 20px;
+  }
   a:link, a:visited {
     background-color: #1245ff;
     color: white;

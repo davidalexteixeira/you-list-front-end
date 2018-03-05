@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
 import { FormsModule }   from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
+import { Http } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
@@ -21,6 +22,7 @@ import { CreatePlaylistComponent } from './pages/create-playlist/create-playlist
 import { PlaylistListComponent } from './components/playlist-list/playlist-list.component';
 import { PlaylistCardComponent } from './components/playlist-card/playlist-card.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+
 
 
 // -- routes

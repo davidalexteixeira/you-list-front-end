@@ -6,12 +6,17 @@
     <h2>
       {{user.username}}
     </h2>
+    <span> Search: <input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
     <div class='playlist-container'>
         <ul>
-          <li class='playlist-list' *ngFor="let playlist of playlists">
-            <a [routerLink]='["../../playlist/single-playlist", playlist._id]'>
-              {{playlist.playlistname}}
-            </a>
+          <li class='playlist-list' *ngFor="let playlist of filteredPlaylists">
+            <div>
+              <a [routerLink]='["../../playlist/single-playlist", playlist._id]'>
+                {{playlist.playlistname}}
+              </a>
+            </div>
+             <button button (click)='deletePlaylist()'>Delete playlist</button>
+             <button>Edit Playlist</button>
           </li>
         </ul>
       </div>

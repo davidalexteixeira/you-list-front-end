@@ -4,20 +4,11 @@
   loading...
 </div>
 
+<span> Search: <input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
+
 <div class='playlist-container'>
   <ul class='playlist-list' *ngIf="playlists">
-    <app-playlist-list [playlists]="playlists" ></app-playlist-list>
-    <div>
-    </div>
+    <app-playlist-list [playlists]="filteredPlaylists" ></app-playlist-list>
   </ul>
 </div>
 <a [routerLink]='["create-playlist"]'>Create a playlist</a>
-  
-  <!-- 
-      <li *ngFor="let playlist of playlists">
-        <div>
-          <a [routerLink]='["single-playlist", playlist._id]'>{{playlist.playlistname}}</a>
-      </div>
-      </li>
-  
-    </ul> -->
