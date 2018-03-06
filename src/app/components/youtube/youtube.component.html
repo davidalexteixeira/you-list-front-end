@@ -1,0 +1,21 @@
+<p>
+  youtube works!
+</p>
+
+
+<div class='search'>
+  <form  (ngSubmit)="searchVideo()">
+    <input [(ngModel)]="search" [ngModelOptions]="{standalone: true}" placeholder="Search">
+    <button type="submit">Search</button>
+  </form>
+      <div *ngIf='results'>
+        <!-- {{results.__zone_symbol__value.items[0].id.videoId}} -->
+        <div *ngFor='let url of arraysId; index as i'>
+          <h3>
+            {{ results[i].snippet.title }}
+          </h3>
+            <iframe width="420" height="315" [src]="url"
+             frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+</div>

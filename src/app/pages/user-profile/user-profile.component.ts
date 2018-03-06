@@ -3,6 +3,7 @@ import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../services/auth.service'
 import { PlaylistService } from '../../services/playlist.service';
+import { YoutubeService } from '../../services/youtube.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -16,10 +17,12 @@ export class UserProfileComponent implements OnInit {
   userId: any;
   filteredPlaylists: any;
   term: string = '';
+  youtubeList: any;
   
   constructor(private authService: AuthService, 
     private userService: UserService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute
+  ) { }
   
 
   ngOnInit() {

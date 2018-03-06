@@ -3,9 +3,9 @@
 <div class="loading" *ngIf="!playlists">
   loading...
 </div>
-
-<span> Search: <input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
-
+<div class='search'>
+  <span> Search: <input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
+</div>
 <div class='playlist-container'>
   <ul class='playlist-list' *ngIf="playlists">
     <app-playlist-list [playlists]="filteredPlaylists" ></app-playlist-list>
