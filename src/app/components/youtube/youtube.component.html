@@ -7,14 +7,16 @@
       </div>
     </form>
   </div>
-      <div *ngIf='results'>
-      <div class='video-results'*ngFor='let url of arraysId; index as i'>
-          <h3>
-            {{ results[i].snippet.title }}
-          </h3>
-            <iframe width="420" height="315" [src]="url"
-             frameborder="0" allowfullscreen></iframe>
-             <button (click)='addVideo(results[i], results[i].snippet.title )'>Add video</button>
+  <div *ngIf='results'>
+  <div class='video-results'*ngFor='let url of arraysId; index as i'>
+    <h3>
+      {{ results[i].snippet.title }}
+    </h3>
+      <iframe width="420" height="315" [src]="url"
+        frameborder="0" allowfullscreen></iframe>
+        <div>
+          <img class='add-video'(click)='addVideo(results[i], results[i].snippet.title )' src="../assets/project-pics/plus.png"/>
         </div>
-      </div>
+    </div>
+  </div>
 </div>

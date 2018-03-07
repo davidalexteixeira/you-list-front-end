@@ -22,7 +22,7 @@ export class YoutubeService {
       const options = {
         withCredentials: true
       };
-      return this.httpClient.get(`${this.API_URL}?part=snippet&maxResults=5&order=viewCount&q=${query}&type=video&videoDefinition=high&key=${this.API_TOKEN}`, options)
+      return this.httpClient.get(`${this.API_URL}?part=snippet&maxResults=15&order=viewCount&q=${query}&type=video&videoDefinition=high&key=${this.API_TOKEN}`, options)
       .toPromise()
      }
 

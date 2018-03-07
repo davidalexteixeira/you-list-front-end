@@ -1,3 +1,21 @@
 .back {
     height: 25px;
 }
+
+
+li {
+    text-align: center;
+    list-style: none;
+}
+
+.delete {
+    height: 25px;
+    margin-bottom: 20px;
+    transition-property: height;
+    transition-duration: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.delete:hover {
+    height: 30px;
+}

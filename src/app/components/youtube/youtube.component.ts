@@ -23,7 +23,6 @@ export class YoutubeComponent implements OnInit {
   baseUrl:string = 'https://www.youtube.com/embed/';
   url: any;
   playlistId: string;
-  reloadingVideos: Boolean = false;
 
 
   arraysId: any = [];
@@ -39,7 +38,6 @@ export class YoutubeComponent implements OnInit {
   }
 
   searchVideo(){
-    this.reloadingVideos = false;
     this.youtubeService.getYoutubeList(this.search)
       .then((result: any) => {
 
@@ -49,7 +47,6 @@ export class YoutubeComponent implements OnInit {
         }) 
         this.results = result.items;
       })
-      this.reloadingVideos = true;
   }
 
   addVideo(id, videoName){

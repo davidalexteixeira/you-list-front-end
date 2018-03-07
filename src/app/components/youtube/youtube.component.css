@@ -16,3 +16,16 @@ img {
 .reload-video {
     display:none;
 }
+.add-video{
+    height: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition-property: height;
+    transition-duration: 0.2s;
+    transition-delay: 0.2s;
+}
+
+.add-video:hover {
+    cursor: cell;
+    height: 55px;
+}

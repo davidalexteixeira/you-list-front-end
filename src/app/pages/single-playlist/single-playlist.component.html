@@ -18,8 +18,13 @@
 </h2>
 <div *ngIf='playlists'>
   <ul>
-    <li *ngFor='let video of playlists.video'>
-      {{video.name}}
+    <li *ngFor='let url of videoArray; index as i'>
+      {{results[i].name}}
+        <iframe width="420" height="315" [src]="url"
+         frameborder="0" allowfullscreen></iframe>
+         <div>
+         <img class='delete' src='../assets/project-pics/delete.png'/>
+        </div>
     </li>
   </ul>
 </div>

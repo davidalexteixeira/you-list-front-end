@@ -1,6 +1,13 @@
 img {
     height: 25px;
     margin-right: 20px;
+    transition-property: height;
+    transition-duration: 0.1s;
+    transition-delay: 0.1s;
+}
+
+img:hover {
+    height: 35px
 }
 
 .logout {
