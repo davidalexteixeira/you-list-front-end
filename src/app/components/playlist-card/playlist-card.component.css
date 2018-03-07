@@ -1,0 +1,12 @@
+.single-playlist a:link{
+    text-decoration: none;
+}
+
+.single-playlist a:visit {
+    text-decoration: none;
+}
+
+a {
+    text-transform: uppercase;
+    color: blue;
+}

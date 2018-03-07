@@ -1,13 +1,12 @@
-<p>
-  youtube works!
-</p>
-
-
 <div class='search'>
-  <form  (ngSubmit)="searchVideo()">
-    <input [(ngModel)]="search" [ngModelOptions]="{standalone: true}" placeholder="Search">
-    <button type="submit">Search</button>
-  </form>
+  <div>
+    <form  (ngSubmit)="searchVideo()">
+      <div class='search-container'>
+        <input [(ngModel)]="search" [ngModelOptions]="{standalone: true}" placeholder="Search">
+        <img src='../assets/project-pics/search.png' (click)="searchVideo()">
+      </div>
+    </form>
+  </div>
       <div *ngIf='results'>
         <!-- {{results.__zone_symbol__value.items[0].id.videoId}} -->
         <div *ngFor='let url of arraysId; index as i'>

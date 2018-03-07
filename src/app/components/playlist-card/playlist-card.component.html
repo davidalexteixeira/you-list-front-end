@@ -1,2 +1,8 @@
-<a [routerLink]='["single-playlist", playlist._id]'> {{playlist.playlistname}}</a>
-<button (click)="handleDeleteClick()">Delete playlist</button>
+<div class='single-playlist'>
+    <div>
+        <a [routerLink]='["single-playlist", playlist._id]'> {{playlist.playlistname}}</a>
+    </div>
+    <div>
+        {{playlist.owner.username}}
+    </div>
+</div>

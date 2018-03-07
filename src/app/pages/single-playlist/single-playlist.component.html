@@ -1,11 +1,6 @@
 <div class='nav-playlists'>
-  <a [routerLink]='["/playlist"]'>Back to playlists</a>
+  <a [routerLink]='["/playlist"]'><img class='back' src="../assets/project-pics/back.png"/></a>
 </div>
-
-<p>
-  single-playlist works!
-</p>
-
 
 <div *ngIf='playlists'>
     <h1>
@@ -15,3 +10,5 @@
         {{playlists.owner.username}}
     </h1>
 </div>
+
+<app-youtube></app-youtube>

@@ -1,0 +1,10 @@
+img {
+    height: 25px;
+    margin-left: 10px;
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
