@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/switchMap';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 @Component({
@@ -18,15 +20,18 @@ export class YoutubeComponent implements OnInit {
   results: any;
   res:any;
   name:string;
-  video: any = {id: 'wzrnuUOoFNM'};
   baseUrl:string = 'https://www.youtube.com/embed/';
   url: any;
+  playlistId: string;
+  reloadingVideos: Boolean = false;
 
 
   arraysId: any = [];
 
 
-  constructor(private youtubeService: YoutubeService, private sanitizer: DomSanitizer) {
+  constructor(private youtubeService: YoutubeService, private sanitizer: DomSanitizer,
+  private activatedRoute: ActivatedRoute,
+  private router: Router) {
   }
 
   ngOnInit() {
@@ -34,6 +39,7 @@ export class YoutubeComponent implements OnInit {
   }
 
   searchVideo(){
+    this.reloadingVideos = false;
     this.youtubeService.getYoutubeList(this.search)
       .then((result: any) => {
 
@@ -43,10 +49,14 @@ export class YoutubeComponent implements OnInit {
         }) 
         this.results = result.items;
       })
+      this.reloadingVideos = true;
   }
 
-  playVideo(){
-
+  addVideo(id, videoName){
+    this.activatedRoute.params.subscribe(params=>{
+      this.playlistId = String(params.id)
+    })
+    this.youtubeService.addVideo(id.id.videoId, this.playlistId, videoName)
   }
 
 }

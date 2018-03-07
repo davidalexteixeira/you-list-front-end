@@ -7,8 +7,19 @@
       {{playlists.playlistname}}
     </h1>
     <h1>
-        {{playlists.owner.username}}
-    </h1>
+      {{playlists.owner.username}}
+    </h1> 
 </div>
 
 <app-youtube></app-youtube>
+
+<h2>
+    Current videos
+</h2>
+<div *ngIf='playlists'>
+  <ul>
+    <li *ngFor='let video of playlists.video'>
+      {{video.name}}
+    </li>
+  </ul>
+</div>

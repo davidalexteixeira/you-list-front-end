@@ -11,7 +11,7 @@
    </div>
     <div class='playlist-container'>
         <ul>
-          <li class='playlist-list' *ngFor="let playlist of filteredPlaylists">
+          <li class='playlist-list' *ngFor="let playlist of filteredPlaylists; index as i">
             <div>
               <a [routerLink]='["../../playlist/single-playlist", playlist._id]'>
                 {{playlist.playlistname}}

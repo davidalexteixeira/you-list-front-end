@@ -18,7 +18,10 @@ export class SinglePlaylistComponent implements OnInit {
       this.playlistId = String(params.id)
       console.log(this.playlistId);
       this.playlistService.getPlayList(this.playlistId)
-      .then((res: any) => {this.playlists = res})
+      .then((res: any) => {
+        this.playlists = res
+        console.log(this.playlists)
+      })
   })
   }
 

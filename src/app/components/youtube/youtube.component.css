@@ -12,3 +12,7 @@ img {
 .video-results{
     text-align: center;
 }
+
+.reload-video {
+    display:none;
+}
