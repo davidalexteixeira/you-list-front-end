@@ -1,3 +1,21 @@
 form {
     text-align: center;
 }
+
+img {
+    cursor: pointer;
+}
+
+.login-page-login{
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+.login-page-login:hover {
+    color: blue;
+    cursor: pointer;
+}

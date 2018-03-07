@@ -1,3 +1,17 @@
 form {
     text-align: center;
 }
+
+.signup-page-signup{
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+.signup-page-signup:hover {
+    color: blue;
+    cursor: pointer;
+}

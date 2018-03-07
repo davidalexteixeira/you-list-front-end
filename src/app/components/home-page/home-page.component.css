@@ -1,0 +1,40 @@
+h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 50px
+}
+
+img{
+    height: 50px;
+}
+
+.landing-login-signup {
+    font-size: 20px;
+    text-align: center;
+}
+
+.landing-login{
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+}
+
+.landing-login:hover {
+    color: blue;
+}
+
+.landing-signup{
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+}
+
+.landing-signup:hover {
+    color: blue;
+}
+
+
+.landing-desc {
+    text-align: center;
+    margin-bottom: 24px;
+    margin-top: -5px
+}
