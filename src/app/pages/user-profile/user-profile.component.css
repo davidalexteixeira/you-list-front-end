@@ -1,3 +1,39 @@
 .back {
     height: 25px
 }
+
+.playlist-container a:link{
+    text-decoration: none;
+}
+
+.playlist-container a:visit {
+    text-decoration: none;
+}
+
+a {
+    text-transform: capitalize;
+    color: blue;
+}
+
+.trash {
+    height: 25px;
+    cursor: pointer;
+}
+
+.edit {
+    height: 25px;
+    cursor: pointer;
+}
+
+.create {
+    text-align: center;
+}
+
+img {
+    height: 40px;
+}
+
+.search {
+    text-align: center;
+    margin-bottom: -3px;
+}

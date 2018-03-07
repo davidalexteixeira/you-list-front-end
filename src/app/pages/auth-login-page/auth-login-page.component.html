@@ -1,6 +1,4 @@
-<p>
-  auth-login-page works!
-</p>
+<h2>Login</h2>
 
 <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
@@ -23,7 +21,7 @@
   </div>
 
   <div class="field submit">
-    <button type="submit" [disabled]="processing">Login</button>
+      <img (click)='submitForm(form)' src='/assets/project-pics/login.png'>
     <div>
       <a [routerLink]="['/auth/signup']">Don't have an account? Sign up here</a>
     </div>
@@ -32,3 +30,7 @@
     </div>
   </div>
 </form>
+
+
+
+<!-- <button type="submit" [disabled]="processing"></button> -->

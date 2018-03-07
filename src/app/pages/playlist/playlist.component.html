@@ -4,11 +4,13 @@
   loading...
 </div>
 <div class='search'>
-  <span> Search: <input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
+  <span><input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
 </div>
 <div class='playlist-container'>
   <ul class='playlist-list' *ngIf="playlists">
     <app-playlist-list [playlists]="filteredPlaylists" ></app-playlist-list>
   </ul>
 </div>
-<a [routerLink]='["create-playlist"]'>Create a playlist</a>
+<div class='create'>
+  <a [routerLink]='["create-playlist"]'><img class='add' src="../assets/project-pics/add.png"/></a>
+</div>

@@ -6,7 +6,7 @@
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && playlistnameField.errors}">
     <label>Playlist name</label>
-    <input type="text" name="playlistname" [(ngModel)]="playlistname" #playlistnameField="ngModel" required minlength="6" [disabled]="processing"/>
+    <input type="text" name="playlistname" [(ngModel)]="playlistname" #playlistnameField="ngModel" required minlength="6" [disabled]="processing" placeholder="Name of playlist"/>
     <div *ngIf="feedbackEnabled && playlistnameField.errors">
       <p *ngIf="playlistnameField.errors.required" class="validation">playlistname required</p>
       <p *ngIf="playlistnameField.errors.minlength" class="validation">playlistname is too short</p>
@@ -14,9 +14,11 @@
   </div>
 
   <div class="field submit">
-    <button type="submit" [disabled]="processing">Create</button>
+    <img (click)='submitForm(form)' class='add' src="../assets/project-pics/add.png"/>
     <div *ngIf="feedbackEnabled && form.invalid">
       <p class="validation">there are errors in the form, please review the fields</p>
     </div>
   </div>
 </form>
+
+<!-- // <button type="submit" [disabled]="processing" -->

@@ -5,10 +5,11 @@
         <span class="username text">loading...</span>
       </div>
       <div class='nav-icons'*ngIf="!loading && !!user">
+        <a class='home' [routerLink]='["/playlist"]'><img src="/assets/project-pics/headphones.png"/></a>
         <a class='profile'[routerLink]="['/user-profile', user._id]"><img src='/assets/project-pics/profile.png'></a>
         <img class='logout' src='/assets/project-pics/logout.png' (click)='logout()'/>
       </div>
-      <div *ngIf="!loading && anon">
+      <div class='login-signup' *ngIf="!loading && anon">
         <a [routerLink]="['/auth/login']">login</a>
         <a [routerLink]="['/auth/signup']">signup</a>
       </div>

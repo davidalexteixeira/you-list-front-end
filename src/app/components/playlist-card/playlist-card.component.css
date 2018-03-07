@@ -7,6 +7,6 @@
 }
 
 a {
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: blue;
 }

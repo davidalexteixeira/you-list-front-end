@@ -20,7 +20,7 @@ html {
   
   body {
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Mina', sans-serif;
     font-size: 16px;
     line-height: 147%;
     background-color: black;
@@ -30,7 +30,9 @@ html {
     text-align: center;
   }
   
-  h2 {}
+  h2 {
+    text-align: center;
+  }
   
   h3 {}
   
@@ -61,6 +63,7 @@ html {
     color: white;
     padding: 60px 0;
     background: black;
+    text-align: center;
   }
   
   #site-main {
@@ -76,15 +79,20 @@ html {
     padding-top: 20px;
   }
 
+  .search {
+    margin-bottom: 15px
+  }
+
   input {
-    border-radius: 5px;
-    background: linear-gradient(to right, blue, black);
-    color: white;
+    border-radius: 3px;
+    background:white;
+    color: black;
+    border: transparent;
   }
 
   .playlist-container {
     overflow-y: scroll;
-    max-height: 120px;
+    max-height: 118px;
     margin-bottom: 10px;
   }
 

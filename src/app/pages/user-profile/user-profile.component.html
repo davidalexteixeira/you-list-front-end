@@ -7,7 +7,7 @@
       {{user.username}}
     </h2>
     <div class='search'>
-      <span> Search: <input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
+      <span><input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
    </div>
     <div class='playlist-container'>
         <ul>
@@ -17,11 +17,13 @@
                 {{playlist.playlistname}}
               </a>
             </div>
-             <button button (click)='deletePlaylist()'>Delete playlist</button>
-             <button>Edit Playlist</button>
+             <img (click)='deletePlaylist()' class='trash' src="../assets/project-pics/trash.png"/>
+            <img class='edit' src="../assets/project-pics/edit.png"/>
           </li>
         </ul>
       </div>
 </div>
 
-<a [routerLink]='["../../playlist/create-playlist"]'>Create a playlist</a>
+<div class='create'>
+<a [routerLink]='["../../playlist/create-playlist"]'><img class='add' src="../assets/project-pics/add.png"/></a>
+</div>
