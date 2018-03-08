@@ -1,27 +1,27 @@
 <div class='nav-playlists'>
-<a [routerLink]='["/playlist"]'><img class='back' src="../assets/project-pics/back.png"/></a>
+  <a [routerLink]='["/playlist"]'><img class='back' src="../assets/project-pics/back.png"/></a>
 </div>
 
 <div>
-    <h2>
-      {{user.username}}
-    </h2>
-    <div class='search'>
-      <span><input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
-   </div>
-    <div class='playlist-container'>
-        <ul>
-          <li class='playlist-list' *ngFor="let playlist of filteredPlaylists; index as i">
-            <div>
-              <a [routerLink]='["../../playlist/single-playlist", playlist._id]'>
-                {{playlist.playlistname}}
-              </a>
-            </div>
-             <img (click)='deletePlaylist(playlist)' class='trash' src="../assets/project-pics/trash.png"/>
-            <img class='edit' (click)='editPlaylist(playlist._id)' src="../assets/project-pics/edit.png"/>
-          </li>
-        </ul>
-      </div>
+  <h2>
+    {{user.username}}
+  </h2>
+  <div class='search'>
+    <span><input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
+  </div>
+  <div class='playlist-container'>
+    <ul>
+      <li class='playlist-list' *ngFor="let playlist of filteredPlaylists; index as i">
+        <div>
+          <a [routerLink]='["../../playlist/single-playlist", playlist._id]'>
+            {{playlist.playlistname}}
+          </a>
+        </div>
+        <img (click)='deletePlaylist(playlist)' class='trash' src="../assets/project-pics/trash.png"/>
+        <img class='edit' (click)='editPlaylist(playlist._id)' src="../assets/project-pics/edit.png"/>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class='create'>

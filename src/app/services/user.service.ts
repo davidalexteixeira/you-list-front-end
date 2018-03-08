@@ -13,24 +13,22 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
 
-   getPlayList():  Promise<any>  {
+  getPlayList():  Promise<any>  {
     const options = {
       withCredentials: true
     };
     return this.httpClient.get(`${this.API_URL}/user/playlists`, options)
     .toPromise();
-   }
+  }
 
-   deletePlayList(playlist, userId): Promise<any> {
-     const options = {
-       withCredentials: true
-     };
-     const data = {
+  deletePlayList(playlist, userId): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    const data = {
       playlist
-     };
-     return this.httpClient.put(`${this.API_URL}/user/${userId}`, data, options)
-     .toPromise();
-   }
-
-
+    };
+    return this.httpClient.put(`${this.API_URL}/user/${userId}`, data, options)
+    .toPromise();
+  }
 }

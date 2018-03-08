@@ -25,7 +25,7 @@ export class YoutubeService {
       return this.httpClient.get(`${this.API_URL}?part=snippet&maxResults=15&order=viewCount&q=
       ${query}&type=video&videoDefinition=high&key=${this.API_TOKEN}`, options)
       .toPromise();
-     }
+  }
 
   addVideo(videoId, playlistId, videoName) {
     const options = {
@@ -37,7 +37,7 @@ export class YoutubeService {
     };
       return this.httpClient.post(`${this.REST_API}/playlist/single-playlist/${playlistId}`, data, options)
       .toPromise();
-  }
+   }
 
   deleteVideo(videoId, playlistId) {
     const options = {

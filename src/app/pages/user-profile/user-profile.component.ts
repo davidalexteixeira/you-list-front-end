@@ -33,11 +33,12 @@ export class UserProfileComponent implements OnInit {
     .subscribe((params) => {
       this.userId = String(params.id);
     });
+
     this.userService.getPlayList()
-    .then((data) => this.playlists = data)
-    .then((playlists) => {
-      this.filteredPlaylists = this.playlists;
-     });
+      .then((data) => this.playlists = data)
+      .then((playlists) => {
+        this.filteredPlaylists = this.playlists;
+      });
   }
 
   filterPlaylists() {
@@ -55,14 +56,11 @@ export class UserProfileComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.userId = String(params.id);
     });
-    console.log(playlist);
     this.userService.deletePlayList(playlist, this.userId);
     window.location.reload();
   }
 
   editPlaylist(id) {
-    console.log(id);
     this.router.navigate(['../../playlist/single-playlist', id]);
   }
-
 }

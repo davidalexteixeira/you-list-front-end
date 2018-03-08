@@ -17,14 +17,14 @@ export class PlaylistComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute,
-    private playlistService: PlaylistService) {
+  private playlistService: PlaylistService) {
     this.playlistService.getList()
-    .then((playlists) => {
-    this.playlists = playlists;
-     })
-    .then((playlists) => {
-      this.filteredPlaylists = this.playlists;
-     });
+      .then((playlists) => {
+      this.playlists = playlists;
+      })
+      .then((playlists) => {
+        this.filteredPlaylists = this.playlists;
+    });
    }
 
 
@@ -32,7 +32,6 @@ export class PlaylistComponent implements OnInit {
   }
 
   filterPlaylists() {
-    console.log(this.term);
     if (this.term.length < 0) {
       this.filteredPlaylists = this.playlists;
     } else {
@@ -41,5 +40,4 @@ export class PlaylistComponent implements OnInit {
       });
     }
   }
-
 }

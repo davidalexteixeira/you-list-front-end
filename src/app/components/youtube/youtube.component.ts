@@ -40,7 +40,6 @@ export class YoutubeComponent implements OnInit {
   searchVideo() {
     this.youtubeService.getYoutubeList(this.search)
       .then((result: any) => {
-
         result.items.forEach((elem) => {
           const url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + elem.id.videoId);
           this.arraysId.push(url);
@@ -56,5 +55,4 @@ export class YoutubeComponent implements OnInit {
     this.youtubeService.addVideo(id.id.videoId, this.playlistId, videoName);
     window.location.reload();
   }
-
 }

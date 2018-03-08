@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Http, HttpModule } from '@angular/http';
 
+// -- Components
+
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { AuthLoginPageComponent } from './pages/auth-login-page/auth-login-page.component';
-import { AuthSignupPageComponent } from './pages/auth-signup-page/auth-signup-page.component';
 import { PlaylistComponent } from './pages/playlist/playlist.component';
 import { SinglePlaylistComponent } from './pages/single-playlist/single-playlist.component';
 import { CreatePlaylistComponent } from './pages/create-playlist/create-playlist.component';
@@ -16,6 +16,12 @@ import { PlaylistListComponent } from './components/playlist-list/playlist-list.
 import { PlaylistCardComponent } from './components/playlist-card/playlist-card.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
+// -- Components - auth
+
+import { AuthLoginPageComponent } from './pages/auth-login-page/auth-login-page.component';
+import { AuthSignupPageComponent } from './pages/auth-signup-page/auth-signup-page.component';
+
+// -- Services
 import { AuthService } from './services/auth.service';
 import { InitGuardService } from './guards/init-guard.service';
 import { RequireAnonService } from './guards/require-anon.service';

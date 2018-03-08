@@ -32,12 +32,12 @@ export class SinglePlaylistComponent implements OnInit {
     .subscribe((params) => {
       this.playlistId = String(params.id);
       this.playlistService.getPlayList(this.playlistId)
-      .then((res: any) => {
-        this.playlists = res;
-        this.playlists.video.forEach((elem) => {
-          const url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + elem.id);
-          this.videoArray.push(url);
-        });
+        .then((res: any) => {
+          this.playlists = res;
+          this.playlists.video.forEach((elem) => {
+            const url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + elem.id);
+            this.videoArray.push(url);
+          });
         this.results = this.playlists.video;
       });
     });
@@ -47,11 +47,9 @@ export class SinglePlaylistComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.playlistId = String(params.id);
     });
-    console.log(videoId);
     this.youtubeService.deleteVideo(videoId, this.playlistId);
     window.location.reload();
   }
-
 }
 
 
