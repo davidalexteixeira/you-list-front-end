@@ -19,11 +19,11 @@
 <div *ngIf='playlists'>
   <ul>
     <li *ngFor='let url of videoArray; index as i'>
-      {{results[i].name}}
+        {{results[i].name}}
         <iframe width="420" height="315" [src]="url"
          frameborder="0" allowfullscreen></iframe>
          <div>
-         <img (click)='deleteVideo(results[i].id)'class='delete' src='../assets/project-pics/delete.png'/>
+          <img (click)='deleteVideo(results[i].id)'class='delete' src='../assets/project-pics/delete.png'/>
         </div>
     </li>
   </ul>

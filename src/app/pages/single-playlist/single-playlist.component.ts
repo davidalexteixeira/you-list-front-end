@@ -21,7 +21,13 @@ export class SinglePlaylistComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private playlistService: PlaylistService,
     private sanitizer: DomSanitizer,
     private youtubeService: YoutubeService
-   ) { 
+   ) { }
+  
+   ngOnInit() {
+    this.getAll();
+  }
+
+  getAll(){
     this.activatedRoute.params
     .subscribe((params) => {
       this.playlistId = String(params.id)
@@ -34,20 +40,17 @@ export class SinglePlaylistComponent implements OnInit {
         }) 
         this.results = this.playlists.video;
       })
-  })
+    })
   }
 
-  ngOnInit() {
+  deleteVideo(videoId){
+    this.activatedRoute.params.subscribe(params=>{
+      this.playlistId = String(params.id);
+    })
+    console.log(videoId);
+    this.youtubeService.deleteVideo(videoId, this.playlistId)
+    window.location.reload();
   }
-
-deleteVideo(videoId){
-  this.activatedRoute.params.subscribe(params=>{
-    this.playlistId = String(params.id);
-  })
-  console.log(videoId);
-  this.youtubeService.deleteVideo(videoId, this.playlistId);
-  window.location.reload();
- }
 
 }
 
