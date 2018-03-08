@@ -15,11 +15,11 @@ export class PlaylistCardComponent implements OnInit {
   ngOnInit() {
   }
 
-//this.delete.emit(this.animal)
+
 
 handleDeleteClick() {
-  this.delete.emit(this.playlist)
-  console.log(`you clicked on ${this.playlist.name}`)
+  this.delete.emit(this.playlist);
+  console.log(`you clicked on ${this.playlist.name}`);
 }
 
 

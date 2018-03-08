@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { AuthService } from '../../services/auth.service'
+import { AuthService } from '../../services/auth.service';
 import { PlaylistService } from '../../services/playlist.service';
 import { YoutubeService } from '../../services/youtube.service';
 
@@ -16,48 +16,38 @@ export class UserProfileComponent implements OnInit {
   playlists: any;
   userId: any;
   filteredPlaylists: any;
-  term: string = '';
+  term: String = '';
   youtubeList: any;
-  
-  constructor(private authService: AuthService, 
+
+  constructor(private authService: AuthService,
     private userService: UserService,
     private activatedRoute: ActivatedRoute
   ) { }
-  
+
 
   ngOnInit() {
     this.user = this.authService.getUser();
 
     this.activatedRoute.params
     .subscribe((params) => {
-      this.userId = String(params.id)
+      this.userId = String(params.id);
     });
     this.userService.getPlayList()
     .then((data) => this.playlists = data)
     .then((playlists) => {
-      this.filteredPlaylists = this.playlists
+      this.filteredPlaylists = this.playlists;
      });
   }
 
-  deletePlaylist() {
-    console.log(`you just clicked on ${JSON.stringify(this.playlists)}`)
-  //   for(let property in this.playlists[0]) {
-  //   console.log(`you just clicked on ${(JSON.stringify(property))}`);
-  // }
-  }
-
-  filterPlaylists(){
-    console.log(this.term)
-    if(this.term.length < 0){
+  filterPlaylists() {
+    console.log(this.term);
+    if (this.term.length < 0) {
       this.filteredPlaylists = this.playlists;
     } else {
       this.filteredPlaylists = this.playlists.filter((playlist: any) => {
-        return playlist.playlistname.toLowerCase().includes(this.term.toLowerCase()) 
+        return playlist.playlistname.toLowerCase().includes(this.term.toLowerCase());
       });
     }
   }
 
 }
-
-//this.delete.emit(this.animal)
-//  @Output() delete = new EventEmitter<string>();

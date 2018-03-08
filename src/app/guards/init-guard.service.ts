@@ -11,13 +11,11 @@ export class InitGuardService {
   canActivate(): Promise<boolean> {
     return this.authService.me()
       .then((user) => {
-        this.router.navigate(['/playlist'])
-        return true
+        return true;
       })
       .catch((error) => {
         console.error(error);
         return false;
       });
   }
-
 }

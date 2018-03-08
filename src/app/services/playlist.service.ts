@@ -11,34 +11,33 @@ export class PlaylistService {
 
 
 
-  API_URL = environment.apiUrl
+  API_URL = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) { }
 
   getList(): Promise<any> {
-
     return this.httpClient.get(`${this.API_URL}/playlist`)
-      .toPromise()
+    .toPromise();
   }
 
   getPlayList(id): Promise<any>  {
     return this.httpClient.get(`${this.API_URL}/playlist/single-playlist/${id}`)
-    .toPromise()
+    .toPromise();
    }
 
-   getAllByUser(userId : any): Promise<any>{
+   getAllByUser(userId: any): Promise<any> {
     const options = {
       withCredentials: true
     };
-        return this.httpClient.get(`${this.API_URL}/user-profile/playlists/${userId}`, options)
-      .toPromise()
+      return this.httpClient.get(`${this.API_URL}/user-profile/playlists/${userId}`, options)
+      .toPromise();
    }
-  
+
    createPlaylist(playlist: any): Promise<any> {
     const options = {
       withCredentials: true
     };
-        return this.httpClient.post(`${this.API_URL}/playlist/create-playlist`, playlist, options)
-      .toPromise()
+      return this.httpClient.post(`${this.API_URL}/playlist/create-playlist`, playlist, options)
+      .toPromise();
   }
 }

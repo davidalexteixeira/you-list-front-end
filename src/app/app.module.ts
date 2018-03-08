@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from "@angular/router";
-import { FormsModule }   from '@angular/forms'
+import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Http, HttpModule } from '@angular/http';
 
@@ -16,13 +16,13 @@ import { PlaylistListComponent } from './components/playlist-list/playlist-list.
 import { PlaylistCardComponent } from './components/playlist-card/playlist-card.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
-import { AuthService } from './services/auth.service'
+import { AuthService } from './services/auth.service';
 import { InitGuardService } from './guards/init-guard.service';
 import { RequireAnonService } from './guards/require-anon.service';
 import { RequireUserService } from './guards/require-user.service';
 import { PlaylistService } from './services/playlist.service';
-import { UserService } from './services/user.service'
-import{ YoutubeService } from './services/youtube.service';
+import { UserService } from './services/user.service';
+import { YoutubeService } from './services/youtube.service';
 import { YoutubeComponent } from './components/youtube/youtube.component';
 
 

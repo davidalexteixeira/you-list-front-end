@@ -27,5 +27,4 @@ export class RequireAnonService {
         return false;
       });
   }
-
 }

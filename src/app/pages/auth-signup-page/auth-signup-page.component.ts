@@ -13,9 +13,9 @@ export class AuthSignupPageComponent implements OnInit {
   error = null;
   processing = false;
   username: String;
-  password: String; 
-  
-    
+  password: String;
+
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class AuthSignupPageComponent implements OnInit {
         password: this.password
       })
         .then((data) => {
-        this.router.navigate(['/playlist'])
+        this.router.navigate(['/playlist']);
       //     // ... maybe turn this to false if your're staying on the page - this.processing = false;
        })
         .catch((err) => {

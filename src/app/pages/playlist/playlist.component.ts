@@ -13,31 +13,31 @@ export class PlaylistComponent implements OnInit {
 
   playlists: Array<any>;
   filteredPlaylists: any;
-  term: string = '';
- 
+  term: String = '';
 
-  constructor(private activatedRoute: ActivatedRoute, 
+
+  constructor(private activatedRoute: ActivatedRoute,
     private playlistService: PlaylistService) {
     this.playlistService.getList()
     .then((playlists) => {
-    this.playlists = playlists
+    this.playlists = playlists;
      })
     .then((playlists) => {
-      this.filteredPlaylists = this.playlists
+      this.filteredPlaylists = this.playlists;
      });
    }
-   
+
 
   ngOnInit() {
   }
 
-  filterPlaylists(){
-    console.log(this.term)
-    if(this.term.length < 0){
+  filterPlaylists() {
+    console.log(this.term);
+    if (this.term.length < 0) {
       this.filteredPlaylists = this.playlists;
     } else {
       this.filteredPlaylists = this.playlists.filter((playlist: any) => {
-        return playlist.playlistname.toLowerCase().includes(this.term.toLowerCase()) 
+        return playlist.playlistname.toLowerCase().includes(this.term.toLowerCase());
       });
     }
   }

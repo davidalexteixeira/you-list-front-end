@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class UserService {
 
-  API_URL = environment.apiUrl
+  API_URL = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class UserService {
       withCredentials: true
     };
     return this.httpClient.get(`${this.API_URL}/user/playlists`, options)
-    .toPromise()
+    .toPromise();
    }
 
 
