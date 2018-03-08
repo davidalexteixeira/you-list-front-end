@@ -37,4 +37,15 @@ export class YoutubeService {
       return this.httpClient.post(`${this.REST_API}playlist/single-playlist/${playlistId}`, data, options)
       .toPromise()
   }
+
+  deleteVideo(videoId, playlistId){
+    const options = {
+      withCredentials: true
+    };
+    const data = {
+      videoId
+    }
+    return this.httpClient.put(`${this.REST_API}playlist/single-playlist/${playlistId}`, data, options)
+    .toPromise();
+  }
 }

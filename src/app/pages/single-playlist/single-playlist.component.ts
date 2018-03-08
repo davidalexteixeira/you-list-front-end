@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlaylistService } from '../../services/playlist.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { YoutubeService } from '../../services/youtube.service';
 
 @Component({
   selector: 'app-single-playlist',
@@ -18,7 +19,8 @@ export class SinglePlaylistComponent implements OnInit {
   videoArray: any = [];
 
   constructor(private activatedRoute: ActivatedRoute, private playlistService: PlaylistService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private youtubeService: YoutubeService
    ) { 
     this.activatedRoute.params
     .subscribe((params) => {
@@ -38,5 +40,15 @@ export class SinglePlaylistComponent implements OnInit {
   ngOnInit() {
   }
 
+deleteVideo(videoId){
+  this.activatedRoute.params.subscribe(params=>{
+    this.playlistId = String(params.id);
+  })
+  console.log(videoId);
+  this.youtubeService.deleteVideo(videoId, this.playlistId);
+  window.location.reload();
+ }
+
 }
+
 
