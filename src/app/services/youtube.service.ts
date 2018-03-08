@@ -10,7 +10,7 @@ export class YoutubeService {
   API_URL = 'https://www.googleapis.com/youtube/v3/search';
   API_TOKEN = 'AIzaSyBLqowYCjvgN3kxq8McTtsC9cPFkvlxRNc';
 
-  REST_API = 'http://localhost:3000/';
+  REST_API = 'https://localhost:3000/';
 
   constructor(private httpClient: HttpClient,
         private _http: Http) { }
