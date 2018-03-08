@@ -2,23 +2,28 @@
 <a [routerLink]='["/playlist"]'><img class='back' src="../assets/project-pics/back.png"/></a>
 </div>
 
-<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+<div class='form-container'>
+  <h2>
+    Create a playlist!
+  </h2>
+  <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
-  <div class="field" [ngClass]="{'has-error': feedbackEnabled && playlistnameField.errors}">
-    <label>Playlist name</label>
-    <input type="text" name="playlistname" [(ngModel)]="playlistname" #playlistnameField="ngModel" required minlength="6" [disabled]="processing" placeholder="Name of playlist"/>
-    <div *ngIf="feedbackEnabled && playlistnameField.errors">
-      <p *ngIf="playlistnameField.errors.required" class="validation">playlistname required</p>
-      <p *ngIf="playlistnameField.errors.minlength" class="validation">playlistname is too short</p>
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && playlistnameField.errors}">
+      <label>Playlist name</label>
+      <input type="text" name="playlistname" [(ngModel)]="playlistname" #playlistnameField="ngModel" required minlength="6" [disabled]="processing" placeholder="Name of playlist"/>
+      <div *ngIf="feedbackEnabled && playlistnameField.errors">
+        <p *ngIf="playlistnameField.errors.required" class="validation">playlistname required</p>
+        <p *ngIf="playlistnameField.errors.minlength" class="validation">playlistname is too short</p>
+      </div>
     </div>
-  </div>
 
-  <div class="field submit">
-    <img (click)='submitForm(form)' class='add' src="../assets/project-pics/add.png"/>
-    <div *ngIf="feedbackEnabled && form.invalid">
-      <p class="validation">there are errors in the form, please review the fields</p>
+    <div class="field submit">
+      <img (click)='submitForm(form)' class='add' src="../assets/project-pics/add.png"/>
+      <div *ngIf="feedbackEnabled && form.invalid">
+        <p class="validation">there are errors in the form, please review the fields</p>
+      </div>
     </div>
-  </div>
-</form>
+  </form>
+</div>
 
 <!-- // <button type="submit" [disabled]="processing" -->

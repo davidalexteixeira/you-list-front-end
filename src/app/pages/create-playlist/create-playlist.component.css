@@ -6,7 +6,6 @@
     height: 30px
 }
 
-form,
- div {
+.form-container {
     text-align: center;
 }
