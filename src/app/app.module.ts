@@ -31,7 +31,7 @@ import { YoutubeComponent } from './components/youtube/youtube.component';
 
 // -- routes
 const routes: Routes = [
-  { path: '',  component: HomePageComponent, canActivate: [ InitGuardService ]},
+  { path: '', component: HomePageComponent, canActivate: [InitGuardService] },
   { path: 'auth/login',  component: AuthLoginPageComponent, canActivate: [ RequireAnonService ] },
   { path: 'auth/signup',  component: AuthSignupPageComponent, canActivate: [ RequireAnonService ] },
   { path: 'user-profile/:id',  component: UserProfileComponent, canActivate: [ RequireUserService ] },

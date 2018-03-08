@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { environment } from '../../environments/environment';
 
 
 @Injectable()
@@ -10,7 +11,7 @@ export class YoutubeService {
   API_URL = 'https://www.googleapis.com/youtube/v3/search';
   API_TOKEN = 'AIzaSyBLqowYCjvgN3kxq8McTtsC9cPFkvlxRNc';
 
-  REST_API = 'http://localhost:3000/';
+  REST_API = environment.apiUrl;
 
   constructor(private httpClient: HttpClient,
         private _http: Http) { }
@@ -34,7 +35,7 @@ export class YoutubeService {
       videoId,
       videoName
     };
-      return this.httpClient.post(`${this.REST_API}playlist/single-playlist/${playlistId}`, data, options)
+      return this.httpClient.post(`${this.REST_API}/playlist/single-playlist/${playlistId}`, data, options)
       .toPromise();
   }
 
@@ -45,7 +46,7 @@ export class YoutubeService {
     const data = {
       videoId
     };
-    return this.httpClient.put(`${this.REST_API}playlist/single-playlist/${playlistId}`, data, options)
+    return this.httpClient.put(`${this.REST_API}/playlist/single-playlist/${playlistId}`, data, options)
     .toPromise();
   }
 }

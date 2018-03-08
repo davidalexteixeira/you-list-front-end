@@ -54,6 +54,7 @@ export class YoutubeComponent implements OnInit {
       this.playlistId = String(params.id);
     });
     this.youtubeService.addVideo(id.id.videoId, this.playlistId, videoName);
+    window.location.reload();
   }
 
 }

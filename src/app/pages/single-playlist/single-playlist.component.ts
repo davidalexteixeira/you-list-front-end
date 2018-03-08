@@ -49,6 +49,7 @@ export class SinglePlaylistComponent implements OnInit {
     });
     console.log(videoId);
     this.youtubeService.deleteVideo(videoId, this.playlistId);
+    window.location.reload();
   }
 
 }

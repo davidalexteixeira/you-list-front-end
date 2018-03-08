@@ -7,7 +7,9 @@
     <p>for the music lover.</p>
 </div>
 
-<div class='landing-login-signup'>
-        <a class='landing-login' [routerLink]="['/auth/login']">Login</a>
-        <a class='landing-signup' [routerLink]="['/auth/signup']">Sign Up</a>
+<div [ngClass]="{'is-user': user, 'is-anon': anon}" >
+    <div *ngIf='anon' class='landing-login-signup'>
+            <a class='landing-login' [routerLink]="['/auth/login']">Login</a>
+            <a class='landing-signup' [routerLink]="['/auth/signup']">Sign Up</a>
+    </div>
 </div>
