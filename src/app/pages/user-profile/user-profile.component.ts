@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { PlaylistService } from '../../services/playlist.service';
 import { YoutubeService } from '../../services/youtube.service';
@@ -21,7 +21,8 @@ export class UserProfileComponent implements OnInit {
 
   constructor(private authService: AuthService,
     private userService: UserService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) { }
 
 
@@ -48,6 +49,20 @@ export class UserProfileComponent implements OnInit {
         return playlist.playlistname.toLowerCase().includes(this.term.toLowerCase());
       });
     }
+  }
+
+  deletePlaylist(playlist) {
+    this.activatedRoute.params.subscribe(params => {
+      this.userId = String(params.id);
+    });
+    console.log(playlist);
+    this.userService.deletePlayList(playlist, this.userId);
+    window.location.reload();
+  }
+
+  editPlaylist(id) {
+    console.log(id);
+    this.router.navigate(['../../playlist/single-playlist', id]);
   }
 
 }

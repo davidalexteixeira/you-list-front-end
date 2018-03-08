@@ -21,6 +21,16 @@ export class UserService {
     .toPromise();
    }
 
+   deletePlayList(playlist, userId): Promise<any> {
+     const options = {
+       withCredentials: true
+     };
+     const data = {
+      playlist
+     };
+     return this.httpClient.put(`${this.API_URL}/user/${userId}`, data, options)
+     .toPromise();
+   }
 
 
 }

@@ -18,6 +18,10 @@ export class HomePageComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    this.user = this.authService.getUser();
+    this.loading = false;
+    this.anon = !this.user;
+
     this.authService.userChange$.subscribe((user) => {
       this.loading = false;
       this.user = user;
