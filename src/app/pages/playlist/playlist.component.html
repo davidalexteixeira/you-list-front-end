@@ -6,10 +6,8 @@
 <div class='search'>
   <span><input (keyup)='filterPlaylists()' [(ngModel)]='term' placeholder="Search"></span>
 </div>
-<div class='playlist-container'>
-  <ul class='playlist-list' *ngIf="playlists">
+<div class='playlist-container' *ngIf="playlists">
     <app-playlist-list [playlists]="filteredPlaylists" ></app-playlist-list>
-  </ul>
 </div>
 <div class='create'>
   <a [routerLink]='["create-playlist"]'><img class='add' src="../assets/project-pics/add.png"/></a>

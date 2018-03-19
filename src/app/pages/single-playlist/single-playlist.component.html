@@ -12,7 +12,7 @@
 <h2>
     Current videos
 </h2>
-<div *ngIf='playlists'>
+<div class='playlist-container' *ngIf='playlists'>
   <ul>
     <li *ngFor='let url of videoArray; index as i'>
       {{results[i].name}}
