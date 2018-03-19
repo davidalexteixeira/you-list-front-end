@@ -21,3 +21,62 @@ img:hover {
 .login-signup{
     float: right;
 }
+
+
+.collapse {
+    float: right;
+}
+
+.navbar-inverse {
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    background: #081256;
+    color: white;
+}
+
+.dropdown-menu {
+    background: #081256;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+    color: #081256;
+    background-color: #3FEAF6;
+}
+
+.dropdown-menu>li>a {
+    color: white;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #081256;
+    font: bold; 
+    background-color: #3FEAF6;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.logout {
+    cursor: pointer;
+}

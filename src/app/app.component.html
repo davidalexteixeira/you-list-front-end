@@ -4,10 +4,21 @@
       <div *ngIf="loading">
         <span class="username text">loading...</span>
       </div>
-      <div class='nav-icons'*ngIf="!loading && !!user">
-        <a class='home' [routerLink]='["/playlist"]'><img src="/assets/project-pics/headphones.png"/></a>
-        <a class='profile'[routerLink]="['/user-profile', user._id]"><img src='/assets/project-pics/profile.png'></a>
-        <img class='logout' src='/assets/project-pics/logout.png' (click)='logout()'/>
+      <div *ngIf="!loading && !!user">
+        <div class="collapse navbar-collapse navbar-inverse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" class="img-thumbnail" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Menu <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a [routerLink]='["/playlist"]'>Playlists</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a [routerLink]="['/user-profile', user._id]">My profile</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a class='logout' (click)='logout()'>Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -17,8 +28,13 @@
   <router-outlet></router-outlet>
 </div>
 
-<footer id="site-footer">
-  <div class="container">
-    &copy; Developed by the YouList team 2018
-  </div>
-</footer>
+
+
+
+<!-- <nav class="navbar navbar-default"> 
+    <div class='nav-icons'*ngIf="!loading && !!user">
+      <a class='home' [routerLink]='["/playlist"]'>Playlists</a>
+      <a class='profile'[routerLink]="['/user-profile', user._id]">My profile</a>
+      <button (click)='logout()'type="button" class="btn btn-default navbar-btn">Log out</button>
+    </div>
+  </nav> -->

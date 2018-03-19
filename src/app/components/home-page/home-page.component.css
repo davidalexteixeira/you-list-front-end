@@ -14,22 +14,32 @@ img{
 
 .landing-login{
     text-transform: capitalize;
-    color: white;
+    color: #3FEAF6;
     text-decoration: none;
 }
 
 .landing-login:hover {
-    color: blue;
+    color: #000642;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .landing-signup{
     text-transform: capitalize;
-    color: white;
+    color: #3FEAF6;
     text-decoration: none;
 }
 
 .landing-signup:hover {
-    color: blue;
+    color: #000642;
+    text-transform: capitalize;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 
@@ -37,4 +47,8 @@ img{
     text-align: center;
     margin-bottom: 24px;
     margin-top: -5px
+}
+
+#site-header {
+    padding: 53px 0;
 }
